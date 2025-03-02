@@ -1,0 +1,178 @@
+$font-families: (
+  Vazirmatn: (
+    weights: (
+      100: "Thin",
+      200: "ExtraLight",
+      300: "Light",
+      400: "Regular",
+      500: "Medium",
+      600: "SemiBold",
+      700: "Bold",
+      800: "ExtraBold",
+      900: "Black",
+    ),
+    path: "../fonts",
+    formats: ("woff2") // Add the desired font formats here
+  ),
+);
+
+@function get-font-path($font-family, $weight, $format) {
+  $font-family-data: map-get($font-families, $font-family);
+
+  @if $font-family-data == null {
+    @warn "Font family '#{$font-family}' not found in $font-families map.";
+    @return null;
+  }
+
+  @if not map-has-key($font-family-data, "weights") {
+    @warn "Font family '#{$font-family}' is missing 'weights' definition.";
+    @return null;
+  }
+
+  $font-weights: map-get($font-family-data, "weights");
+  $weight-name: map-get($font-weights, $weight);
+  $font-path: map-get($font-family-data, "path");
+  $font-formats: map-get($font-family-data, "formats");
+
+  @if not $font-formats {
+    @warn "No font formats defined for '#{$font-family}'.";
+    @return null;
+  }
+
+  $font-paths: ();
+
+  @each $format in $font-formats {
+    $font-paths: append(
+      $font-paths,
+      unquote("url('#{$font-path}/#{$format}/#{$font-family}-#{$weight-name}.#{$format}')") 
+      format("#{$format}")
+    );
+  }
+
+  @return $font-paths;
+}
+
+@mixin font-face($font-family, $weights) {
+  @each $weight, $weight-name in $weights {
+    @font-face {
+      font-family: $font-family;
+      font-style: normal;
+      font-weight: $weight;
+      font-display: swap;
+      src: get-font-path($font-family, $weight, $weight-name);
+    }
+  }
+}
+
+@include font-face(
+  Vazirmatn,
+  map-get(map-get($font-families, "Vazirmatn"), "weights")
+);
+
+html,
+body {
+  font-family: "Vazirmatn", sans-serif;
+}
+
+
+body {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.5em;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+.h1,
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+
+@media (min-width: 1200px) {
+  .h1,
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+.h2,
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+
+@media (min-width: 1200px) {
+  .h2,
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.h3,
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+
+@media (min-width: 1200px) {
+  .h3,
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+.h4,
+h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+  .h4,
+  h4 {
+    font-size: 1.3rem;
+  }
+}
+
+.h5,
+h5 {
+  font-size: 1.2rem;
+}
+
+.h6,
+h6 {
+  font-size: 1.15rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.4em;
+  font-weight: 500;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}

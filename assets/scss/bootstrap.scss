@@ -1,0 +1,148 @@
+@import "../../node_modules/bootstrap/scss/mixins/banner";
+@include bsBanner("");
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+
+// ANCHOR Include any default variable overrides here
+$white: #fff;
+$gray: #888b8d;
+$primary: #c95a00;
+$secondary: #b40069;
+$border-radius: 5px;
+$link-decoration: none;
+
+// offcanvas
+$offcanvas-vertical-height: 100vh;
+$offcanvas-horizontal-width: 350px;
+$offcanvas-transition-duration: 0.4s;
+// Modal
+$modal-content-border-radius: $border-radius;
+$modal-content-border-width: 0;
+$modal-dialog-margin: 0;
+$modal-backdrop-opacity: 0.6;
+// Dropdown
+$dropdown-border-radius: $border-radius;
+$dropdown-border-color: $gray;
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: $primary;
+// form-check
+$form-check-input-border-radius: $border-radius;
+$form-check-input-border: 1px solid $gray;
+// popover
+$popover-border-radius: $border-radius;
+$popover-inner-border-radius: 0;
+$popover-border-color: $primary;
+// form control
+$input-focus-box-shadow: unset;
+//select
+$form-select-border-radius: $border-radius;
+$form-select-focus-box-shadow: unset;
+// Nav Tabs
+$nav-tabs-border-color: $primary;
+$nav-tabs-border-radius: $border-radius;
+// Accordion
+$accordion-button-focus-box-shadow: unset;
+$accordion-button-focus-border-color: unset;
+$accordion-button-focus-box-shadow: unset;
+$accordion-button-active-bg: tint-color($gray, 90%);
+// Badge
+$badge-border-radius: $border-radius;
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+// ANCHOR Include any default map overrides here
+$colors: map-remove(
+  $colors,
+  "blue",
+  "indigo",
+  "purple",
+  "pink",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "teal",
+  "cyan"
+);
+// Add a custom color to $theme-colors
+// $custom-colors: (
+//   "custom-color": #712cf9
+// );
+// $theme-colors: map-merge($theme-colors, $custom-colors);
+
+$custom-spacers: (
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+);
+
+// Merge the maps
+$spacers: map-merge($spacers, $custom-spacers);
+
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/dropdown";
+@import "../../node_modules/bootstrap/scss/button-group";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/breadcrumb";
+@import "../../node_modules/bootstrap/scss/pagination";
+@import "../../node_modules/bootstrap/scss/badge";
+@import "../../node_modules/bootstrap/scss/alert";
+@import "../../node_modules/bootstrap/scss/progress";
+@import "../../node_modules/bootstrap/scss/list-group";
+@import "../../node_modules/bootstrap/scss/close";
+@import "../../node_modules/bootstrap/scss/toasts";
+@import "../../node_modules/bootstrap/scss/modal";
+@import "../../node_modules/bootstrap/scss/tooltip";
+@import "../../node_modules/bootstrap/scss/popover";
+@import "../../node_modules/bootstrap/scss/carousel";
+@import "../../node_modules/bootstrap/scss/spinners";
+@import "../../node_modules/bootstrap/scss/offcanvas";
+@import "../../node_modules/bootstrap/scss/placeholders";
+
+// Helpers
+@import "../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
+// ANCHOR additional custom code here
+// .btn-check:checked + .btn,
+// :not(.btn-check) + .btn:active,
+// .btn:first-child:active,
+// .btn.active,
+// .btn.show {
+//   border-color: transparent;
+// }
+// .accordion-item {
+//   border: unset;
+// }
+// .no-validate:valid {
+//   border-color: $primary !important;
+//   color: $primary !important;
+// }
+// .popover-header {
+//   margin: 0 !important  ;
+// }
+// .table-hover > tbody > tr:hover > * {
+//   --bs-table-accent-bg: #d4effd;
+// }

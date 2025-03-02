@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "autoprefixer": "^10.4.20",
+    "bootstrap": "^5.3.3",
+    "chokidar-cli": "^3.0.0",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-rtl": "^2.0.0",
+    "sass": "^1.83.0"
+  },
+  "name": "bs5-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch assets/scss:./style.css --style compressed",
+    "build:rtl": "sass assets/scss/style.scss | postcss --use postcss-rtl --use cssnano --output ./style.css",
+    "watch": "chokidar 'assets/scss/**/*.scss' -c 'npm run build:rtl'"
+  },
+  "author": "Ali Manzour",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

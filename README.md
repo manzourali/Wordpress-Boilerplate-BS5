@@ -2,9 +2,7 @@
 
 ## Installation
 
-1\. Install Required Packages
-
-2\. in themes folder clone this repository
+1\. in themes folder clone this repository
 ```console
 git clone https://github.com/manzourali/Wordpress-Boilerplate-BS5.git
 ```
@@ -12,23 +10,23 @@ or
 ```console
 gh repo clone manzourali/Wordpress-Boilerplate-BS5
 ```
-3\. change the Wordpress-Boilerplate-BS5 folder to YOUR_THEME_NAME
+2\. change the Wordpress-Boilerplate-BS5 folder to YOUR_THEME_NAME
 ```console
 mv Wordpress-Boilerplate-BS5 YOUR_THEME_NAME
 ```
-4\. go to YOUR_THEME_NAME folder
+3\. go to YOUR_THEME_NAME folder
 ```console
 cd YOUR_THEME_NAME
 ```
-5\. Install packages:
+4\. Install Required Packages:
 ```console
 npm install
 ```
-6\. Run this command to watch scss files:
+5\. Run this command to watch scss files:
 ```console
 npm run watch
 ```
-7\. Add your scss/css style in
+6\. Add your scss/css style in
 ```bash
 assets
   scss
